@@ -23,18 +23,18 @@ body{
     padding: 0;
 }
 
-#container{
+#library-container{
     display: flex;
-    flex-direction: column;
 }
 
 #details-container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 20vw;
+    width: 272px;
     height: 100vh;
     background-color: var(--black-shade);
+    position: fixed;
 }
 
 #library-name-container, #tagline{
@@ -44,7 +44,7 @@ body{
 }
 
 #library-name-container{
-    width: 20vw;
+    width: 272px;
     text-align: center;
     color: white;
 }
@@ -64,13 +64,13 @@ body{
 .stats-text{
     background-color: white;
     color: black;
-    width: 12vw;
+    width: 164px;
     padding: 20px;
     text-align: center;
 }
 
 .stats-numbers{
-    width: 8vw;
+    width: 108px;
     text-align: center;
 }
 
@@ -78,9 +78,36 @@ body{
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 }
 
 img{
     height: 15px;
+}
+
+#header{
+    margin-left: 272px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    gap: 10px;
+    position: fixed;
+    width: 80vw;
+    z-index: 2;
+}
+
+#tagline{
+    color: black;
+}
+
+#add-book{
+    background-color: var(--green-shade);
+    border: none;
+    width: 215px;
+    height: 55px;
+    border-radius: 6px;
+    color: white;
+    margin-left: 20px;
+    font-family: 'Abhaya Libre', serif;
+    font-size: 1.3rem;
 }
