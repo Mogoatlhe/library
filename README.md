@@ -9,6 +9,12 @@ Software application to mimic the addition and removal of books to/from them Lib
  + HINT: use data-attribute and array index to link them
 - Add a button to `change` its read status
 
+## Technologies
+
+- HTML5
+- CSS3
+- JavaScript
+
 ## Live Version
 https://mogoatlhe.github.io/library - Not yet live
 
