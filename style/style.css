@@ -100,6 +100,24 @@ img{
     color: black;
 }
 
+#addition-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#addition-feedback{
+    font-size: 1.8rem;
+}
+
+.success-feedback{
+    color: var(--green-shade);
+}
+
+.failure-feedback{
+    color: var(--red-shade);
+}
+
 #add-book{
     background-color: var(--green-shade);
     border: none;
@@ -122,9 +140,13 @@ img{
     width: 50vw;
     height: 60vh;
     z-index: 3;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.form-container{
+    display: flex !important;
 }
 
 #form-header{
