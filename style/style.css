@@ -90,7 +90,7 @@ img{
     display: flex;
     flex-direction: column;
     padding-left: 30px;
-    gap: 10px;
+    gap: 5px;
     position: fixed;
     width: 80vw;
     z-index: 2;
@@ -110,4 +110,112 @@ img{
     margin-left: 20px;
     font-family: 'Abhaya Libre', serif;
     font-size: 1.3rem;
+}
+
+#form-container{
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.6);
+    width: 50vw;
+    height: 60vh;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#form-header{
+    display: flex;
+    font-family: 'Allison', cursive;
+    font-size: 3rem;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;
+}
+
+#cross{
+    color: var(--red-shade);
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.field-container{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+}
+
+.label-container{
+    font-size: 1.4rem;
+    width: 140px;
+    text-align: center;
+}
+
+.input-container{
+    width: 330px;
+}
+
+input{
+    border: none;
+    border-bottom: solid 1px black;
+}
+
+input[type="text"]{
+    width: 320px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]{
+    -moz-appearance:textfield;
+}
+
+#checkbox-container{
+    display: flex;
+    align-items: center;
+}
+
+#buttons-container{
+    padding-top: 30px;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+#buttons-container button{
+    border: none;
+    border-radius: 0;
+    width: 105px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Abhaya Libre', serif;
+    font-size: 1.2rem;
+}
+
+button{
+    cursor: pointer;
+}
+
+#cancel{
+    background-color: var(--red-shade);
+}
+
+#add{
+    background-color: var(--green-shade);
 }

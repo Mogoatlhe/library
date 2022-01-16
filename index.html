@@ -50,5 +50,50 @@
             </div>
         </div>
     </div>
+    <div id = "form-container">
+        <div id = "form-header">
+            <p id = "form-title">Add New Book</p>
+            <p id = "cross">x</p>
+        </div>
+        <form>
+            <div id = author-field class = "field-container">
+                <div class = "label-container">
+                    <label>Author:</label>
+                </div>
+                <div class = "input-container">
+                    <input type = "text" id = "author-input"/>
+                </div>
+            </div>
+            <div id = title-field class = "field-container">
+                <div class = "label-container">
+                    <label>Title:</label>
+                </div>
+                <div class = "input-container">
+                    <input type = "text" id = "title-input"/>
+                </div>
+                </div>
+            <div id = pages-field class = "field-container">
+                <div class = "label-container">
+                    <label>Pages:</label>
+                </div>
+                <div class = "input-container">
+                    <input type = "number" id = "pages-input"/>
+                </div>
+            </div>
+            <div id = read-field class = "field-container">
+                <div class = "label-container">
+                    <label>I have Read This Book:</label>
+                </div>
+                <div class = "input-container" id = "checkbox-container">
+                    <input type = "checkbox" id = "read-input"/>
+                </div>
+            </div>
+        </form>
+        <div id = "buttons-container">
+            <button id = "cancel">Cancel</button>
+            <button id = "add">Add</button>
+        </div>
+    </div>
+    <script src = "script/index.js"></script>
 </body>
 </html>
