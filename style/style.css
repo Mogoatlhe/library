@@ -85,8 +85,12 @@ img{
     height: 15px;
 }
 
-#header{
+#books-section-container{
+    width: 80vw;
     margin-left: 272px;
+}
+
+#header{
     display: flex;
     flex-direction: column;
     padding-left: 30px;
@@ -128,6 +132,13 @@ img{
     margin-left: 20px;
     font-family: 'Abhaya Libre', serif;
     font-size: 1.3rem;
+}
+
+#books-container{
+    position: relative;
+    width: 80vw;
+    height: 50vh;
+    background-color: red;
 }
 
 #form-container{

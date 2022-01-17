@@ -47,7 +47,7 @@ function createBook(formContainer){
         let bookValidity = null;
         const title = document.getElementById("title-input").value;
         const pages = document.getElementById("pages-input").value;
-        const mark = document.getElementById("pages-input").checked;
+        const mark = document.getElementById("read-input").checked;
         const author = document.getElementById("author-input").value;
         const book = new Book(author, title, pages, mark);
 
@@ -69,14 +69,77 @@ function createBook(formContainer){
     
 }
 
+function createBookNode(book){
+
+    const outerBookContainer = document.createElement("div");
+    const innerBookContainer = document.createElement("div");
+    const authorDisplay = document.createElement("p");
+    const titleDisplay = document.createElement("p");
+    const pagesDisplay = document.createElement("p");
+    const bookControls = document.createElement("div");
+    const read = document.createElement("button");
+    const remove = document.createElement("button");
+
+    outerBookContainer.classList.add("outer-book-container");
+    innerBookContainer.classList.add("inner-book-container");
+    authorDisplay.classList.add("author-display");
+    titleDisplay.classList.add("title-display");
+    pagesDisplay.classList.add("pages-display");
+    bookControls.classList.add("book-controls");
+    read.classList.add("is-read");
+    remove.classList.add("remove");
+
+    read.textContent = "Mark As Read";
+    remove.textContent = "Remove";
+    
+    authorDisplay.textContent = `Author: ${book.author}`;
+    titleDisplay.textContent = `Title: ${book.title}`;
+    pagesDisplay.textContent = `Pages: ${book.pages}`;
+    
+    if(book.isRead){
+        read.textContent = "Mark As Not Read";
+    }
+
+    bookControls.appendChild(read);
+    bookControls.appendChild(remove);
+
+    innerBookContainer.appendChild(authorDisplay);
+    innerBookContainer.appendChild(titleDisplay);
+    innerBookContainer.appendChild(pagesDisplay);
+
+    outerBookContainer.appendChild(innerBookContainer);
+    outerBookContainer.appendChild(bookControls);
+
+    return outerBookContainer;
+}
+
+function displayBooks(){
+
+    const booksContainer = document.getElementById("books-container");
+    const outerBookContainers = document.getElementsByClassName("outer-book-container");
+
+    if(outerBookContainers !== null){
+        [...outerBookContainers].map(curr => {
+            booksContainer.removeChild(curr);
+        });
+    }
+
+    myLibrary.map(curr => {
+        const bookNode = createBookNode(curr);
+        booksContainer.appendChild(bookNode);
+    });
+
+}
+
+
 function addBookToLibrary(book, bookAdditionFeedBack){
     
     const duplicate = myLibrary.some(curr => {
         let exists = curr.author === book.author;
         exists = exists && curr.title === book.title;
-        exists = exists && curr.pages === curr.pages;
+        exists = exists && curr.pages === book.pages;
         
-        if(curr){
+        if(exists){
             return true;
         }
     });
@@ -88,6 +151,7 @@ function addBookToLibrary(book, bookAdditionFeedBack){
     }
 
     myLibrary.push(book);
+    displayBooks();
 }
 
 displayForm();
