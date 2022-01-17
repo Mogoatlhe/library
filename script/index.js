@@ -72,7 +72,7 @@ function createBook(formContainer){
     
 }
 
-function createBookNode(book){
+function createBookNode(book, position){
 
     const outerBookContainer = document.createElement("div");
     const innerBookContainer = document.createElement("div");
@@ -91,6 +91,9 @@ function createBookNode(book){
     bookControls.classList.add("book-controls");
     read.classList.add("is-read");
     remove.classList.add("remove");
+
+    outerBookContainer.dataset.position = position;
+    addRemoveEvent(remove);
 
     read.textContent = "Mark As Read";
     remove.textContent = "Remove";
@@ -116,19 +119,45 @@ function createBookNode(book){
     return outerBookContainer;
 }
 
+function addRemoveEvent(remove){
+    
+    const bookAdditionFeedBack = document.getElementById("addition-feedback");
+    remove.addEventListener("click", function(){
+
+        bookAdditionFeedBack.classList.remove("failure-feedback");
+        if(remove === true){}
+        
+        const position = this.parentElement.parentElement.dataset.position;
+        // const booksContainer = document.getElementById("books-container");
+        // const outerBookContainers = document.getElementsByClassName("outer-book-container");
+        
+        // const pressedBook = [...outerBookContainers].filter((curr) => curr.dataset.position === position);
+        
+        // booksContainer.removeChild(pressedBook[0]);
+
+        myLibrary.splice(position, 1);
+        displayBooks();
+
+        bookAdditionFeedBack.classList.add("success-feedback");
+        bookAdditionFeedBack.textContent = "book successfully removed from the library";
+        
+    });
+
+}
+
 function displayBooks(){
 
     const booksContainer = document.getElementById("books-container");
     const outerBookContainers = document.getElementsByClassName("outer-book-container");
 
     if(outerBookContainers !== null){
-        [...outerBookContainers].map(curr => {
+        [...outerBookContainers].map((curr) => {
             booksContainer.removeChild(curr);
         });
     }
-
-    myLibrary.map(curr => {
-        const bookNode = createBookNode(curr);
+    
+    myLibrary.map((curr, i) => {
+        const bookNode = createBookNode(curr, i);
         booksContainer.appendChild(bookNode);
     });
 
