@@ -48,6 +48,10 @@ function displayForm(){
     addBook.addEventListener("click", () => {
         libraryContainer.classList.add("blur");
         formContainer.classList.add("form-container");
+        
+        const authorInput = document.getElementById("author-input");
+        authorInput.focus();
+        
         createBook(formContainer);
 
     });
