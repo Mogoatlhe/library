@@ -22,3 +22,5 @@ https://mogoatlhe.github.io/library - Not yet live
 ![](images/design.png)
 
 ## Lessons Learnt / Challenges Faced
+
+Learnt about the `addEventListener`'s third optional property, which helped me to prevent triggering an event more than once
