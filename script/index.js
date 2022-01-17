@@ -242,4 +242,24 @@ function addBookToLibrary(book, bookAdditionFeedBack){
     displayStats();
 }
 
+function prepolutateLibrary(){
+
+    const book1 = new Book("Robert C. Martin", "Clean Code", 462, true);
+    const book2 = new Book("Arsene Wenger", "My Life in Red and White", 352, true);
+    const book3 = new Book("John Cross", "Arsene Wenger: The Inside Story of Arsenal Under Wenger", 496, false);
+    const book4 = new Book("Amy Lawrence", "Invincible", 256, true);
+    const book5 = new Book("Amy Lawrence", "The Wenger Reolution", 462, false);
+
+    myLibrary[0] = book1;
+    myLibrary[1] = book2;
+    myLibrary[2] = book3;
+    myLibrary[3] = book4;
+    myLibrary[4] = book5;
+
+    displayBooks();
+    displayStats();
+}
+
+prepolutateLibrary();
+
 displayForm();
