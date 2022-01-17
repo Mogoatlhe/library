@@ -97,7 +97,10 @@ img{
     gap: 5px;
     position: fixed;
     width: 80vw;
+    height: 190px;
     z-index: 2;
+    background-color: white;
+    box-shadow: 0px 1px 20px rgba(0,0,0,0.15);
 }
 
 #tagline{
@@ -135,10 +138,58 @@ img{
 }
 
 #books-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 210px;
+    padding: 0 48px 0px 48px;
     position: relative;
     width: 80vw;
     height: 50vh;
-    background-color: red;
+    gap: 10px;
+}
+
+.outer-book-container{
+    width: 236px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-book-container{
+    width: 232px;
+    border: solid 1px var(--black-shade);
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+    padding: 20px;
+    box-shadow: 0px 1px 20px rgba(0,0,0,0.15);
+}
+
+.book-controls{
+    width: 236px;
+}
+
+.book-controls button{
+    width: 118px;
+    height: 40px;
+    color: var(--black-shade);
+    border: none;
+    border-radius: 0;
+}
+
+button{
+    box-shadow: 0px 1px 20px rgba(0,0,0,0.15);
+}
+
+.is-read{
+    background-color: var(--blue-shade);
+}
+
+.remove{
+    background-color: var(--red-shade);
 }
 
 #form-container{
@@ -201,7 +252,7 @@ form{
 
 input{
     border: none;
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px var(--black-shade);
 }
 
 input[type="text"]{
