@@ -1,6 +1,20 @@
 "use strict";
 
 const myLibrary = [];
+const cross = document.getElementById("cross");
+const cancel = document.getElementById("cancel");
+const libraryContainer = document.getElementById("library-container");
+
+const hideForm = () => {
+    const formContainer = document.getElementById("form-container");
+
+    libraryContainer.classList.remove("blur");
+    formContainer.classList.remove("form-container");
+
+}
+
+cross.addEventListener("click", hideForm);
+cancel.addEventListener("click", hideForm);
 
 function Book(author, title, pages, isRead){
     this.author = author;
@@ -32,8 +46,10 @@ function displayForm(){
     const formContainer = document.getElementById("form-container");
     
     addBook.addEventListener("click", () => {
+        libraryContainer.classList.add("blur");
         formContainer.classList.add("form-container");
         createBook(formContainer);
+
     });
 }
 
@@ -159,7 +175,6 @@ function addRemoveEvent(remove){
 
 }
 
-
 function displayBooks(){
 
     const booksContainer = document.getElementById("books-container");
@@ -198,8 +213,9 @@ function displayStats(){
     unreadBooks.textContent = Number(myLibrary.length) - Number(readBooks);
 }
 
-
 function addBookToLibrary(book, bookAdditionFeedBack){
+
+    libraryContainer.classList.remove("blur");
     
     const duplicate = myLibrary.some(curr => {
         let exists = curr.author === book.author;

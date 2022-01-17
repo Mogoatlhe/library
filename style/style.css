@@ -27,6 +27,10 @@ body{
     display: flex;
 }
 
+.blur{
+    opacity: 0.3 !important;
+}
+
 #details-container{
     display: flex;
     flex-direction: column;
@@ -224,6 +228,10 @@ button{
     color: var(--red-shade);
     font-size: 3.5rem;
     font-weight: 600;
+}
+
+#cross:hover{
+    cursor: pointer;
 }
 
 form{
