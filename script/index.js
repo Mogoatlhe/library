@@ -94,6 +94,7 @@ function createBookNode(book, position){
 
     outerBookContainer.dataset.position = position;
     addRemoveEvent(remove);
+    addReadEvent(read);
 
     read.textContent = "Mark As Read";
     remove.textContent = "Remove";
@@ -119,6 +120,24 @@ function createBookNode(book, position){
     return outerBookContainer;
 }
 
+function addReadEvent(read){
+
+    read.addEventListener("click", function(){
+
+        const position = this.parentElement.parentElement.dataset.position;
+
+        if(this.textContent === "Mark As Read"){
+            this.textContent = "Mark As Not Read"
+        }else{
+            this.textContent = "Mark As Read";
+        }
+
+        myLibrary[position].isRead = myLibrary[position].isRead ? false : true;
+        displayStats();
+    });
+
+}
+
 function addRemoveEvent(remove){
     
     const bookAdditionFeedBack = document.getElementById("addition-feedback");
@@ -139,6 +158,7 @@ function addRemoveEvent(remove){
     });
 
 }
+
 
 function displayBooks(){
 
