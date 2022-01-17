@@ -39,6 +39,9 @@ function displayForm(){
 
 function createBook(formContainer){
 
+    const once = {
+        once: true
+    };
     const add = document.getElementById("add");
     const bookAdditionFeedBack = document.getElementById("addition-feedback");
 
@@ -65,7 +68,7 @@ function createBook(formContainer){
         }
         
         bookAdditionFeedBack.classList.add("failure-feedback");
-    });
+    }, once);
     
 }
 
