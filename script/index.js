@@ -134,6 +134,26 @@ function displayBooks(){
 
 }
 
+function displayStats(){
+
+    let readBooks;
+    const totalBooks =  document.getElementById("total-books-number");
+    const booksRead =  document.getElementById("books-read-number");
+    const unreadBooks =  document.getElementById("unread-books-number");
+
+    readBooks = myLibrary.reduce((total, curr) => {
+        if(curr.isRead){
+            total++;
+        }
+        
+        return total;
+    }, 0);
+    
+    totalBooks.textContent = myLibrary.length;
+    booksRead.textContent = readBooks;
+    unreadBooks.textContent = Number(myLibrary.length) - Number(readBooks);
+}
+
 
 function addBookToLibrary(book, bookAdditionFeedBack){
     
@@ -155,6 +175,7 @@ function addBookToLibrary(book, bookAdditionFeedBack){
 
     myLibrary.push(book);
     displayBooks();
+    displayStats();
 }
 
 displayForm();
