@@ -137,6 +137,7 @@ function addRemoveEvent(remove){
 
         myLibrary.splice(position, 1);
         displayBooks();
+        displayStats();
 
         bookAdditionFeedBack.classList.add("success-feedback");
         bookAdditionFeedBack.textContent = "book successfully removed from the library";
