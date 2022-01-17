@@ -128,12 +128,6 @@ function addRemoveEvent(remove){
         if(remove === true){}
         
         const position = this.parentElement.parentElement.dataset.position;
-        // const booksContainer = document.getElementById("books-container");
-        // const outerBookContainers = document.getElementsByClassName("outer-book-container");
-        
-        // const pressedBook = [...outerBookContainers].filter((curr) => curr.dataset.position === position);
-        
-        // booksContainer.removeChild(pressedBook[0]);
 
         myLibrary.splice(position, 1);
         displayBooks();
